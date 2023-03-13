@@ -1,7 +1,9 @@
 export default function SearchBar() {
   return (
     <>
-      <input type="text" placeholder="Search Bar" />
+      <section className="searchbar-container">
+        <input type="text" placeholder="Search Bar" className="searchbar" />
+      </section>
     </>
   )
 }

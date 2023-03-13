@@ -1,7 +1,74 @@
-.root{
+.App {
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #999;
+  margin: 0;
+  /* width: 100vw;
+  height: 100vh; */
+  }
+
+/*--------------- Header ---------------*/
+.header {
+  background-color: #555;
+}
+/*--------------- NavBar ---------------*/
+.nav {
+background-color: #555;
+color:white;
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 2rem;
+padding: 0 1rem;
+list-style-type: none;
+}
+
+.nav ul{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav a {
+  color: inherit;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: .25rem;
+  
+}
+
+.nav li.active {
   background-color: #555;
 }
 
-.App {
-  text-align: center;
+.nav li:hover {
+  background-color: #777;
 }
+
+
+
+/*--------------- Searchbar ---------------*/
+.searchbar-container{
+  background-color: #999;
+}
+/*--------------- Reviews List ---------------*/
+.review-container{
+  background-color: #333;
+}
+
+.review-img{
+padding: 0.5rem;
+}
+
+/*--------------- Review (Singular) ---------------*/
+.review-item{
+  list-style-type: none;
+}
+
+/*--------------- CSS Animation - Underline ---------------*/

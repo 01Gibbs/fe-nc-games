@@ -16,7 +16,7 @@ const Reviews = () => {
   return isLoading ? (
     <h1>Loading Animation Goes Here</h1>
   ) : (
-    <main review-container>
+    <main className="review-container">
       <ul className="review-list">
         {reviews.map((review) => {
           return (
