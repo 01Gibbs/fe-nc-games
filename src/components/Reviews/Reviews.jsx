@@ -22,7 +22,7 @@ const Reviews = () => {
           return (
             <li key={review.review_id} className="review-item">
               <h2 className="review-title">{review.title}</h2>
-              <h3>{review.owner}</h3>
+              <h3 className="review-author">{review.owner}</h3>
               <Link to="/">
                 <img
                   src={review.review_img_url}
