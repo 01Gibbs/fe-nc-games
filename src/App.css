@@ -1,38 +1,111 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  font-weight: 400;
+}
+
+html{
+  font-size: 62.5%;
+}
+
+
+/*--------------- Header ---------------*/
+.header {
+  background-color: #555;
+  font-size: 3rem;
+  font-weight: 900;
+  color: #fff;
   text-align: center;
+  text-transform: capitalize;
+  letter-spacing: 0.1rem;
+  text-shadow: 0.1rem 0.1rem 0.1rem #000;
+}
+/*--------------- NavBar ---------------*/
+.nav {
+background-color: #555;
+color:white;
+display: flex;
+justify-content: space-between;
+align-items: center;
+font-size: 2rem;
+gap: 2rem;
+padding: 0 1rem;
+list-style-type: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav ul{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  gap: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav a {
+  color: inherit;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: .25rem;
+  
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav li.active {
+  background-color: #555;
+}
+
+.nav li:hover {
+  background-color: #777;
+}
+
+
+
+/*--------------- Searchbar ---------------*/
+.searchbar-container{
+  background-color: #999;
+  padding: 1rem;
+}
+
+.searchbar {
+  align-items: stretch;
+  margin-inline: 1rem;
+}
+/*--------------- Reviews List ---------------*/
+.review-container{
+  background-color: #333;
+  padding: 1rem;
+}
+
+.review-list{
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  list-style-type: none;
 }
 
-.App-link {
-  color: #61dafb;
+.review-item{
+    text-transform: capitalize;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.review-title{
+  position: relative;
 }
+
+.review-author{
+}
+
+.review-img{
+position: relative;
+float:left;
+padding: 0.5rem;
+width: 35%;
+height: auto
+}
+
+/*--------------- Review (Singular) ---------------*/
+
+/*--------------- CSS Animation - Underline ---------------*/
