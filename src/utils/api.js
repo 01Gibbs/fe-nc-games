@@ -15,3 +15,9 @@ export const getSingleReview = (review_id) => {
     return data.review
   })
 }
+
+export const getCommentsOnReview = (review_id) => {
+  return boardgameApi.get(`/reviews/${review_id}/comments`).then(({ data }) => {
+    return data.reviewComments
+  })
+}

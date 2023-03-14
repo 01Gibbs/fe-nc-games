@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { getSingleReview } from '../../utils/api'
 import { useState, useEffect } from 'react'
+import ReviewComments from '../Comments/ReviewComments'
 
 const SingleReview = () => {
   const [singleReview, setSingleReview] = useState([])
@@ -14,8 +15,6 @@ const SingleReview = () => {
       setIsLoading(false)
     })
   }, [review_id])
-
-  console.log(singleReview)
 
   return isLoading ? (
     <h2>Loading Animation Goes Here</h2>
@@ -44,6 +43,7 @@ const SingleReview = () => {
         {singleReview.review_body}
       </article>
       <h6 className="single-review-released">{singleReview.created_at}</h6>
+      <ReviewComments />
     </main>
   )
 }

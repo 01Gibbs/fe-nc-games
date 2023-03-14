@@ -6,6 +6,7 @@ import SearchBar from './components/SearchBar/SearchBar'
 import ReviewList from './components/Reviews/ReviewList'
 import ReviewSingle from './components/Reviews/ReviewSingle'
 import Footer from './components/Footer/Footer'
+import ReviewComments from './components/Comments/ReviewComments'
 
 function App() {
   return (
@@ -17,6 +18,10 @@ function App() {
         <Route path="/" element={<ReviewList />} />
         <Route path="/reviews" element={<ReviewList />} />
         <Route path="/reviews/:review_id" element={<ReviewSingle />} />
+        <Route
+          path="/reviews/:review_id/comments"
+          element={<ReviewComments />}
+        />
       </Routes>
       <Footer />
     </section>
