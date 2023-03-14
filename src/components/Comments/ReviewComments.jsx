@@ -25,6 +25,7 @@ const ReviewComments = () => {
           return (
             <li className="comment" key={comment.comment_id}>
               <h3>{comment.author}</h3>
+              <h4>{comment.created_at}</h4>
               <article>{comment.body}</article>
               <button type="toggle" className="votes-button button">
                 Votes: {comment.votes}
