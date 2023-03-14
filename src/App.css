@@ -5,6 +5,8 @@
   text-decoration: none;
   outline: none;
   font-weight: 400;
+  /* grid-template-columns: 1fr, 1fr, 1fr, 1fr;
+  grid-template-rows: auto; */
 }
 
 html{
@@ -14,7 +16,7 @@ html{
 
 /*--------------- Header ---------------*/
 .header {
-  background-color: #555;
+  background-color: #444;
   font-size: 3rem;
   font-weight: 900;
   color: #fff;
@@ -22,6 +24,7 @@ html{
   text-transform: capitalize;
   letter-spacing: 0.1rem;
   text-shadow: 0.1rem 0.1rem 0.1rem #000;
+  padding: 1rem;
 }
 /*--------------- NavBar ---------------*/
 .nav {
@@ -108,5 +111,11 @@ height: auto
 }
 
 /*--------------- Review (Singular) ---------------*/
+
+/*--------------- Footer ---------------*/
+.footer {
+  padding: 6rem;
+}
+
 
 /*--------------- CSS Animation - Underline ---------------*/

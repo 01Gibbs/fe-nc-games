@@ -9,3 +9,9 @@ export const getReviews = () => {
     return data.reviews
   })
 }
+
+export const getSingleReview = (review_id) => {
+  return boardgameApi.get(`/reviews/${review_id}`).then(({ data }) => {
+    return data.review
+  })
+}
