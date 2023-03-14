@@ -19,11 +19,12 @@ const ReviewComments = () => {
     <h2>ReviewComments: Loading Animation Goes Here</h2>
   ) : (
     <section className="comment-container">
+      <h2 className="comments-title">Comments:</h2>
       <ul className="comment-list">
         {reviewComments.map((comment) => {
-          console.log(reviewComments)
           return (
             <li className="comment" key={comment.comment_id}>
+              <h3>{comment.author}</h3>
               <article>{comment.body}</article>
               <button type="toggle" className="votes-button button">
                 Votes: {comment.votes}

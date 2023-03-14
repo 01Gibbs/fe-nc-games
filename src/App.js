@@ -2,7 +2,7 @@ import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import Header from './components/Header/Header'
 import Nav from './components/Nav/Navbar'
-import SearchBar from './components/SearchBar/SearchBar'
+// import SearchBar from './components/SearchBar/SearchBar'
 import ReviewList from './components/Reviews/ReviewList'
 import ReviewSingle from './components/Reviews/ReviewSingle'
 import Footer from './components/Footer/Footer'
@@ -13,7 +13,7 @@ function App() {
     <section className="App">
       <Header />
       <Nav />
-      <SearchBar />
+      {/* <SearchBar /> */}
       <Routes>
         <Route path="/" element={<ReviewList />} />
         <Route path="/reviews" element={<ReviewList />} />
