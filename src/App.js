@@ -18,10 +18,6 @@ function App() {
         <Route path="/" element={<ReviewList />} />
         <Route path="/reviews" element={<ReviewList />} />
         <Route path="/reviews/:review_id" element={<ReviewSingle />} />
-        <Route
-          path="/reviews/:review_id/comments"
-          element={<ReviewComments />}
-        />
       </Routes>
       <Footer />
     </section>
