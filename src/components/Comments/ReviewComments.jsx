@@ -21,7 +21,6 @@ const ReviewComments = () => {
     <section className="comment-container">
       <h2 className="comments-title">Comments:</h2>
       <ul className="comment-list">
-        {console.log(reviewComments)}
         {reviewComments.length ? (
           reviewComments.map((comment) => {
             return (

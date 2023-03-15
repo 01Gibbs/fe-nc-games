@@ -27,7 +27,3 @@ export const incrementVoteOnReview = (review_id, incrementNum) => {
     inc_votes: incrementNum,
   })
 }
-
-//optimistic rendering
-// state -> user req -> if ! -> revert
-//                   -> if Y -> forward
