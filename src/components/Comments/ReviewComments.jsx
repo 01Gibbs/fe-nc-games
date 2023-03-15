@@ -21,18 +21,23 @@ const ReviewComments = () => {
     <section className="comment-container">
       <h2 className="comments-title">Comments:</h2>
       <ul className="comment-list">
-        {reviewComments.map((comment) => {
-          return (
-            <li className="comment" key={comment.comment_id}>
-              <h3>{comment.author}</h3>
-              <h4>{comment.created_at}</h4>
-              <article>{comment.body}</article>
-              <button type="toggle" className="votes-button button">
-                Votes: {comment.votes}
-              </button>
-            </li>
-          )
-        })}
+        {console.log(reviewComments)}
+        {reviewComments.length ? (
+          reviewComments.map((comment) => {
+            return (
+              <li className="comment" key={comment.comment_id}>
+                <h3>{comment.author}</h3>
+                <h4>{comment.created_at}</h4>
+                <article>{comment.body}</article>
+                <button type="toggle" className="votes-button button">
+                  Votes: {comment.votes}
+                </button>
+              </li>
+            )
+          })
+        ) : (
+          <p>No Comments Found!</p>
+        )}
       </ul>
     </section>
   )
