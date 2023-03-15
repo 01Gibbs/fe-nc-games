@@ -15,3 +15,19 @@ export const getSingleReview = (review_id) => {
     return data.review
   })
 }
+
+export const getCommentsOnReview = (review_id) => {
+  return boardgameApi.get(`/reviews/${review_id}/comments`).then(({ data }) => {
+    return data.reviewComments || []
+  })
+}
+
+export const incrementVoteOnReview = (review_id, incrementNum) => {
+  return boardgameApi.patch(`/reviews/${review_id}`, {
+    inc_votes: incrementNum,
+  })
+}
+
+//optimistic rendering
+// state -> user req -> if ! -> revert
+//                   -> if Y -> forward

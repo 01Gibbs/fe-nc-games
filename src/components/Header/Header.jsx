@@ -1,7 +1,12 @@
+import headerImg from '../../assets/headerQuestForDragons.png'
+
 export default function Header() {
   return (
     <header className="header-container">
-      <h1 className="header">Header</h1>
+      <img
+        src={headerImg}
+        alt="Quest For Dragons: Board Game Review Website"
+      ></img>
     </header>
   )
 }
