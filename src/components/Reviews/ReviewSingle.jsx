@@ -1,11 +1,13 @@
 import { useParams } from 'react-router-dom'
-import { getSingleReview } from '../../utils/api'
+import { getSingleReview, incrementVoteOnReview } from '../../utils/api'
 import { useState, useEffect } from 'react'
 import ReviewComments from '../Comments/ReviewComments'
 
 const SingleReview = () => {
   const [singleReview, setSingleReview] = useState([])
   const [isLoading, setIsLoading] = useState(true)
+  const [userVote, setUserVote] = useState(0)
+  const [isError, setIsError] = useState(false)
   const { review_id } = useParams()
 
   useEffect(() => {
@@ -15,6 +17,13 @@ const SingleReview = () => {
       setIsLoading(false)
     })
   }, [review_id])
+
+  const onClick = () => {
+    userVote <= 0 ? setUserVote(1) : setUserVote(0)
+    incrementVoteOnReview(review_id, userVote <= 0 ? 1 : -1).catch((error) => {
+      setIsError(true)
+    })
+  }
 
   return isLoading ? (
     <h2>Loading Animation Goes Here</h2>
@@ -32,7 +41,11 @@ const SingleReview = () => {
       ></img>
       <ul className="img-buttons">
         <li className="img-vote-button button">
-          <button type="toggle">Votes: {singleReview.votes}</button>
+          <button type="toggle" onClick={onClick}>
+            {!isError
+              ? `Votes: ${singleReview.votes + userVote}`
+              : 'Network Error'}
+          </button>
         </li>
       </ul>
       <article className="single-review-votes"></article>
