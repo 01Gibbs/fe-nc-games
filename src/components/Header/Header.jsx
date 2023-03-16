@@ -6,6 +6,7 @@ export default function Header() {
       <img
         src={headerImg}
         alt="Quest For Dragons: Board Game Review Website"
+        className="header"
       ></img>
     </header>
   )

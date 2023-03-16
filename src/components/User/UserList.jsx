@@ -18,9 +18,9 @@ const Users = () => {
     <h2>Loading Animation Goes Here</h2>
   ) : (
     <main className="review-container">
-      <ul className="review-list" key={users.user_id}>
+      <ul className="review-list">
         {users.map((user) => {
-          return <UserCard {...user} />
+          return <UserCard key={users.user_id} {...user} />
         })}
       </ul>
     </main>

@@ -1,12 +1,15 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { postCommentOnReview } from '../../utils/api'
+import { UserContext } from '../../context/User'
 
-export const AddComment = ({ review_id, author }) => {
+export const AddComment = ({ review_id }) => {
   const [commentInput, setCommentInput] = useState('')
+  const { user } = useContext(UserContext)
+  console.log(user, 'in add comment')
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    postCommentOnReview(review_id, author, commentInput)
+    postCommentOnReview(review_id, user.username, commentInput)
   }
 
   return (

@@ -1,8 +1,5 @@
 import './App.css'
-import { useContext } from 'react'
-// import { useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
-import { UserContext } from './context/User'
 import Header from './components/Header/Header'
 import Nav from './components/Nav/Navbar'
 // import SearchBar from './components/SearchBar/SearchBar'
@@ -12,11 +9,6 @@ import ReviewSingle from './components/Reviews/ReviewSingle'
 import Footer from './components/Footer/Footer'
 
 function App() {
-  const userValueFromContext = useContext(UserContext)
-  console.log(userValueFromContext)
-
-  // const [loggedInUser, setLoggedInUser] = useState('')
-
   return (
     <section className="App">
       <Header />
