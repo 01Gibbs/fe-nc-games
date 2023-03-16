@@ -1,13 +1,12 @@
 import { useState } from 'react'
 import { postCommentOnReview } from '../../utils/api'
 
-export const AddComment = ({ review_id }) => {
+export const AddComment = ({ review_id, author }) => {
   const [commentInput, setCommentInput] = useState('')
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    console.log(review_id, commentInput, '<<<< this thning')
-    postCommentOnReview(review_id, 'tickle122', commentInput)
+    postCommentOnReview(review_id, author, commentInput)
   }
 
   return (
