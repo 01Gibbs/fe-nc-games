@@ -16,8 +16,6 @@ const ReviewComments = () => {
     })
   }, [review_id])
 
-  console.log(reviewComments, 'review comments/ ``')
-
   return isLoading ? (
     <h2>ReviewComments: Loading Animation Goes Here</h2>
   ) : (
