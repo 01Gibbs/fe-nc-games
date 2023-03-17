@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { getCommentsOnReview } from '../../utils/api'
+import { AddComment } from './AddComment'
 
 const ReviewComments = () => {
   const [reviewComments, setReviewComments] = useState([])
@@ -20,6 +21,7 @@ const ReviewComments = () => {
   ) : (
     <section className="comment-container">
       <h2 className="comments-title">Comments:</h2>
+      <AddComment review_id={review_id} setReviewComments={setReviewComments} />
       <ul className="comment-list">
         {reviewComments.length ? (
           reviewComments.map((comment) => {
