@@ -5,18 +5,22 @@ import { UserContext } from '../../context/User'
 export const AddComment = ({ review_id, setReviewComments }) => {
   const [commentInput, setCommentInput] = useState('')
   const [isFormDisabled, setIsFormDisabled] = useState(false)
+  const [isError, setIsError] = useState(false)
   const { user } = useContext(UserContext)
 
   const handleSubmit = (event) => {
     event.preventDefault()
+    setIsError(false)
     setIsFormDisabled(true)
-    postCommentOnReview(review_id, user.username, commentInput).then(
-      (responseFromApi) => {
+    postCommentOnReview(review_id, user.username, commentInput)
+      .then((responseFromApi) => {
         setReviewComments((currentReviewComments) => {
           return [responseFromApi.data, ...currentReviewComments]
         })
-      }
-    )
+      })
+      .catch(() => {
+        setIsError(true)
+      })
     setCommentInput('')
     setIsFormDisabled(false)
   }
@@ -29,10 +33,12 @@ export const AddComment = ({ review_id, setReviewComments }) => {
         placeholder="Comment Box"
         value={commentInput}
         onChange={(event) => setCommentInput(event.target.value)}
+        required
       ></textarea>
       <button type="submit" disabled={isFormDisabled}>
         Post Comment
       </button>
+      {isError ? <p>Error Posting Comment!</p> : null}
     </form>
   )
 }
