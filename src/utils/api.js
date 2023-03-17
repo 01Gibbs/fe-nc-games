@@ -28,17 +28,14 @@ export const getCommentsOnReview = (review_id) => {
 }
 
 export const postCommentOnReview = (review_id, author, newComment) => {
-  console.log(review_id, author, newComment, 'review_id, author, newcomment')
   return boardgameApi
     .post(`/reviews/${review_id}/comments`, {
       username: author,
       body: newComment,
     })
-    .then((commentFromApi) => {
-      console.log(commentFromApi)
-      return commentFromApi
+    .then((responseFromApi) => {
+      return responseFromApi
     })
-    .catch(console.log)
 }
 
 export const incrementVoteOnReview = (review_id, incrementNum) => {

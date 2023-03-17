@@ -16,12 +16,14 @@ const ReviewComments = () => {
     })
   }, [review_id])
 
+  console.log(reviewComments, 'review comments/ ``')
+
   return isLoading ? (
     <h2>ReviewComments: Loading Animation Goes Here</h2>
   ) : (
     <section className="comment-container">
       <h2 className="comments-title">Comments:</h2>
-      <AddComment review_id={review_id} />
+      <AddComment review_id={review_id} setReviewComments={setReviewComments} />
       <ul className="comment-list">
         {reviewComments.length ? (
           reviewComments.map((comment) => {
